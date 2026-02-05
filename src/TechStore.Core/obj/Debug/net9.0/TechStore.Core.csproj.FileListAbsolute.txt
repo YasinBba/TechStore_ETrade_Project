@@ -9,3 +9,4 @@ C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\De
 C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\refint\TechStore.Core.dll
 C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\TechStore.Core.pdb
 C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\ref\TechStore.Core.dll
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\TechStore.Core.sourcelink.json
