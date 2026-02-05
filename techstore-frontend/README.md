@@ -1,16 +1,40 @@
-# React + Vite
+# TechStore Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React ve Vite ile geliştirilmiş, modern ve responsive bir e-ticaret ön yüz projesi.
 
-Currently, two official plugins are available:
+## 🚀 Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18** ve **Vite** ile yüksek performans
+- **Tailwind CSS** ile modern tasarım
+- **Context API** ile state yönetimi (Auth & Cart)
+- **Axios** ile API entegrasyonu
+- **Tasarım:** Responsive Navbar, Hero Slider, Ürün Kartları, Detay Sayfası
+- **Alışveriş:** Sepete Ekle, Miktar Güncelle, Sepetten Sil
+- **Sipariş:** Çok adımlı Checkout süreci, Sipariş Geçmişi
+- **Auth:** JWT tabanlı Giriş/Kayıt, Korumalı Route'lar
 
-## React Compiler
+## 🛠️ Kurulum
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Proje dizinine git
+cd techstore-frontend
 
-## Expanding the ESLint configuration
+# Bağımlılıkları yükle
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Projeyi çalıştır
+npm run dev
+```
+
+## 📦 Klasör Yapısı
+
+- `src/components`: Tekrar kullanılabilir bileşenler (Navbar, Footer, vb.)
+- `src/pages`: Sayfa bileşenleri (HomePage, ProductListPage, vb.)
+- `src/context`: Global state yönetimi (AuthContext, CartContext)
+- `src/services`: API servisleri (authService, productService, orderService)
+- `src/layouts`: Sayfa düzenleri
+
+## 🔗 API Bağlantısı
+
+Proje varsayılan olarak `http://localhost:5000/api` adresindeki .NET Core Web API'ye bağlanır.
+`src/context/AuthContext.jsx` dosyasından baseURL ayarlanabilir.
