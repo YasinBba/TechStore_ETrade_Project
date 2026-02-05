@@ -1,0 +1,11 @@
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\bin\Debug\net9.0\TechStore.Core.deps.json
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\bin\Debug\net9.0\TechStore.Core.dll
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\bin\Debug\net9.0\TechStore.Core.pdb
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\TechStore.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\TechStore.Core.AssemblyInfoInputs.cache
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\TechStore.Core.AssemblyInfo.cs
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\TechStore.Core.csproj.CoreCompileInputs.cache
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\TechStore.Core.dll
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\refint\TechStore.Core.dll
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\TechStore.Core.pdb
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Core\obj\Debug\net9.0\ref\TechStore.Core.dll

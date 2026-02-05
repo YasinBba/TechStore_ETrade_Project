@@ -1,0 +1,17 @@
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\bin\Debug\net9.0\TechStore.Infrastructure.deps.json
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\bin\Debug\net9.0\TechStore.Infrastructure.runtimeconfig.json
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\bin\Debug\net9.0\TechStore.Infrastructure.dll
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\bin\Debug\net9.0\TechStore.Infrastructure.pdb
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\bin\Debug\net9.0\TechStore.Core.dll
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\bin\Debug\net9.0\TechStore.Core.pdb
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStore.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStore.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStore.Infrastructure.AssemblyInfo.cs
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStore.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStor.D63A1535.Up2Date
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStore.Infrastructure.dll
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\refint\TechStore.Infrastructure.dll
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStore.Infrastructure.pdb
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\TechStore.Infrastructure.genruntimeconfig.cache
+C:\Users\Yasinus\.gemini\antigravity\scratch\TechStore\src\TechStore.Infrastructure\obj\Debug\net9.0\ref\TechStore.Infrastructure.dll
