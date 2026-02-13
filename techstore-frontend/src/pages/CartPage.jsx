@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Trash2, Plus, Minus, ArrowLeft, ShoppingBag } from 'lucide-react';
+import { Trash2, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import CartItem from '../components/CartItem';
 
 const CartPage = () => {
     const { cartItems, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
@@ -43,51 +44,12 @@ const CartPage = () => {
                 {/* Cart Items List */}
                 <div className="lg:w-2/3 space-y-4">
                     {cartItems.map((item) => (
-                        <div key={item.productId} className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col sm:flex-row items-center transition-all hover:shadow-md">
-                            <Link to={`/products/${item.productId}`} className="shrink-0 mb-4 sm:mb-0">
-                                <img
-                                    src={item.imageUrl || 'https://via.placeholder.com/150'}
-                                    alt={item.productName}
-                                    className="w-24 h-24 object-contain rounded"
-                                />
-                            </Link>
-
-                            <div className="flex-1 sm:ml-6 text-center sm:text-left w-full">
-                                <Link to={`/products/${item.productId}`} className="text-lg font-bold text-gray-800 hover:text-blue-600 truncate block">
-                                    {item.productName}
-                                </Link>
-                                <div className="text-blue-600 font-bold mt-1">{item.price.toLocaleString('tr-TR')} ₺</div>
-                            </div>
-
-                            <div className="flex items-center justify-between w-full sm:w-auto mt-4 sm:mt-0 space-x-6">
-                                {/* Quantity Controls */}
-                                <div className="flex items-center border border-gray-200 rounded-lg">
-                                    <button
-                                        onClick={() => updateQuantity(item.productId, item.quantity - 1)}
-                                        className="p-2 hover:bg-gray-100 text-gray-500 transition-colors"
-                                        disabled={item.quantity <= 1}
-                                    >
-                                        <Minus size={16} />
-                                    </button>
-                                    <span className="w-8 text-center font-bold text-sm">{item.quantity}</span>
-                                    <button
-                                        onClick={() => updateQuantity(item.productId, item.quantity + 1)}
-                                        className="p-2 hover:bg-gray-100 text-gray-500 transition-colors"
-                                    >
-                                        <Plus size={16} />
-                                    </button>
-                                </div>
-
-                                {/* Remove Button */}
-                                <button
-                                    onClick={() => removeFromCart(item.productId)}
-                                    className="text-red-500 hover:text-red-700 bg-red-50 p-2 rounded-full hover:bg-red-100 transition-colors"
-                                    title="Sepetten Sil"
-                                >
-                                    <Trash2 size={20} />
-                                </button>
-                            </div>
-                        </div>
+                        <CartItem
+                            key={item.productId}
+                            item={item}
+                            updateQuantity={updateQuantity}
+                            removeFromCart={removeFromCart}
+                        />
                     ))}
 
                     <button
@@ -131,6 +93,24 @@ const CartPage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Mobile Sticky Checkout Button */}
+            <div className="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 shadow-2xl z-50">
+                <div className="flex items-center justify-between gap-4">
+                    <div className="flex flex-col">
+                        <span className="text-sm text-gray-500">Toplam</span>
+                        <span className="text-xl font-bold text-gray-900">{cartTotal.toLocaleString('tr-TR')} ₺</span>
+                    </div>
+                    <button
+                        onClick={handleCheckout}
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-blue-500/30 transition-all flex-1"
+                    >
+                        Siparişi Tamamla
+                    </button>
+                </div>
+            </div>
+            {/* Spacer for sticky footer */}
+            <div className="h-24 lg:hidden"></div>
         </div>
     );
 };

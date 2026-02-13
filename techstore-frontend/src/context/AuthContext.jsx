@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import { jwtDecode } from 'jwt-decode';
 
 const AuthContext = createContext();
@@ -10,13 +10,6 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [loading, setLoading] = useState(true);
-
-    // Configure Axios defaults
-    axios.defaults.baseURL = 'http://localhost:5000/api'; // Adjust port as needed
-
-    if (token) {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    }
 
     useEffect(() => {
         if (token) {
@@ -41,15 +34,18 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const response = await axios.post('/auth/login', { email, password });
+            const response = await api.post('/auth/login', { email, password });
             const { token, user } = response.data.data;
 
             localStorage.setItem('token', token);
             setToken(token);
             setUser(user);
 
-            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-            return { success: true };
+            // Decode token to get role
+            const decoded = jwtDecode(token);
+            const role = decoded.role || decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+
+            return { success: true, user: { ...user, role } };
         } catch (error) {
             return {
                 success: false,
@@ -60,7 +56,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (userData) => {
         try {
-            const response = await axios.post('/auth/register', userData);
+            const response = await api.post('/auth/register', userData);
             return { success: true, message: response.data.message };
         } catch (error) {
             return {
@@ -74,7 +70,6 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('token');
         setToken(null);
         setUser(null);
-        delete axios.defaults.headers.common['Authorization'];
     };
 
     const value = {

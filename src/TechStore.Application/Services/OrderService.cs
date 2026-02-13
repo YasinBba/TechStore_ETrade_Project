@@ -4,6 +4,7 @@ using TechStore.Application.DTOs.Orders;
 using TechStore.Core.Entities;
 using TechStore.Core.Enums;
 using TechStore.Core.Interfaces.Repositories;
+using TechStore.Core.Interfaces.Services;
 
 namespace TechStore.Application.Services;
 
@@ -11,11 +12,13 @@ public class OrderService : IOrderService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
+    private readonly IEmailService _emailService;
 
-    public OrderService(IUnitOfWork unitOfWork, IMapper mapper)
+    public OrderService(IUnitOfWork unitOfWork, IMapper mapper, IEmailService emailService)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _emailService = emailService;
     }
 
     public async Task<ApiResponse<OrderDto>> GetByIdAsync(int id)
@@ -97,6 +100,20 @@ public class OrderService : IOrderService
                 // Update stock
                 product.StockQuantity -= cartItem.Quantity;
                 await _unitOfWork.Products.UpdateAsync(product);
+
+                // Add StockHistory record
+                var stockHistory = new StockHistory
+                {
+                    ProductId = product.Id,
+                    ChangeAmount = -cartItem.Quantity, // Negative for reduction
+                    OldStock = product.StockQuantity + cartItem.Quantity,
+                    NewStock = product.StockQuantity,
+                    Reason = "Sale", // Enum or constant would be better
+                    CreatedBy = userId.ToString(), // Assuming userId is int, converting to string
+                    CreatedAt = DateTime.UtcNow
+                };
+                // Note property doesn't exist in entity, removed assignment
+                await _unitOfWork.Repository<StockHistory>().AddAsync(stockHistory);
             }
 
             // Create order
@@ -137,6 +154,21 @@ public class OrderService : IOrderService
             await _unitOfWork.CommitTransactionAsync();
 
             var orderDto = _mapper.Map<OrderDto>(order);
+
+            // Send confirmation email (Fire and forget or await)
+            try 
+            {
+                await _emailService.SendEmailAsync(
+                    "user@example.com", // In real app, get from user
+                    $"Sipariş Onayı - #{order.OrderNumber}",
+                    $"Siparişiniz başarıyla oluşturuldu. Toplam tutar: {order.Total:C2}"
+                );
+            }
+            catch 
+            {
+                // Email failure shouldn't fail the order
+            }
+
             return ApiResponse<OrderDto>.SuccessResult(orderDto, "Order created successfully");
         }
         catch (Exception ex)

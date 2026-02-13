@@ -41,16 +41,22 @@ public class ProductService : IProductService
 
     public async Task<ApiResponse<PagedResult<ProductDto>>> GetAllAsync(ProductFilterDto filter)
     {
-        var products = await _unitOfWork.Products.GetAllAsync();
+        var products = await _unitOfWork.Products.GetAllWithDetailsAsync();
         
         // Apply filters
         var query = products.AsQueryable();
 
         if (filter.CategoryId.HasValue)
             query = query.Where(p => p.CategoryId == filter.CategoryId.Value);
+        
+        if (filter.CategoryIds != null && filter.CategoryIds.Any())
+            query = query.Where(p => filter.CategoryIds.Contains(p.CategoryId));
 
         if (filter.BrandId.HasValue)
             query = query.Where(p => p.BrandId == filter.BrandId.Value);
+
+        if (filter.BrandIds != null && filter.BrandIds.Any())
+            query = query.Where(p => p.BrandId.HasValue && filter.BrandIds.Contains(p.BrandId.Value));
 
         if (filter.MinPrice.HasValue)
             query = query.Where(p => p.Price >= filter.MinPrice.Value);
@@ -59,8 +65,11 @@ public class ProductService : IProductService
             query = query.Where(p => p.Price <= filter.MaxPrice.Value);
 
         if (!string.IsNullOrWhiteSpace(filter.Search))
-            query = query.Where(p => p.Name.Contains(filter.Search) || 
-                                    (p.Description ?? "").Contains(filter.Search));
+        {
+            var searchTerm = filter.Search.ToLower();
+            query = query.Where(p => p.Name.ToLower().Contains(searchTerm) || 
+                                    (p.Description ?? "").ToLower().Contains(searchTerm));
+        }
 
         if (filter.InStock)
             query = query.Where(p => p.StockQuantity > 0);
@@ -74,6 +83,9 @@ public class ProductService : IProductService
             "name" => filter.SortOrder == "desc"
                 ? query.OrderByDescending(p => p.Name)
                 : query.OrderBy(p => p.Name),
+            "createdat" => filter.SortOrder == "asc"
+                ? query.OrderBy(p => p.CreatedAt)
+                : query.OrderByDescending(p => p.CreatedAt),
             _ => query.OrderByDescending(p => p.CreatedAt)
         };
 
@@ -115,6 +127,21 @@ public class ProductService : IProductService
         var product = _mapper.Map<Product>(createDto);
         product.Slug = GenerateSlug(createDto.Name);
 
+        // Handle Image
+        if (!string.IsNullOrEmpty(createDto.ImageUrl))
+        {
+            product.Images = new List<ProductImage>
+            {
+                new ProductImage
+                {
+                    ImageUrl = createDto.ImageUrl,
+                    IsPrimary = true,
+                    DisplayOrder = 1,
+                    AltText = createDto.Name
+                }
+            };
+        }
+
         await _unitOfWork.Products.AddAsync(product);
         await _unitOfWork.SaveChangesAsync();
 
@@ -124,13 +151,43 @@ public class ProductService : IProductService
 
     public async Task<ApiResponse<ProductDto>> UpdateAsync(int id, UpdateProductDto updateDto)
     {
-        var product = await _unitOfWork.Products.GetByIdAsync(id);
+        // Use GetByIdWithDetailsAsync to include Images
+        var product = await _unitOfWork.Products.GetByIdWithDetailsAsync(id);
         
         if (product == null)
             return ApiResponse<ProductDto>.FailResult("Product not found");
 
+        // Check if SKU is changed and unique
+        if (updateDto.SKU != product.SKU)
+        {
+            if (await _unitOfWork.Products.ExistsBySkuAsync(updateDto.SKU))
+                return ApiResponse<ProductDto>.FailResult("Product with this SKU already exists");
+        }
+
         _mapper.Map(updateDto, product);
         product.Slug = GenerateSlug(updateDto.Name);
+
+        // Handle Image Update
+        if (!string.IsNullOrEmpty(updateDto.ImageUrl))
+        {
+            var primaryImage = product.Images.FirstOrDefault(i => i.IsPrimary);
+            if (primaryImage != null)
+            {
+                primaryImage.ImageUrl = updateDto.ImageUrl;
+                primaryImage.AltText = updateDto.Name;
+            }
+            else
+            {
+                product.Images.Add(new ProductImage
+                {
+                    ProductId = product.Id,
+                    ImageUrl = updateDto.ImageUrl,
+                    IsPrimary = true,
+                    DisplayOrder = 1,
+                    AltText = updateDto.Name
+                });
+            }
+        }
 
         await _unitOfWork.Products.UpdateAsync(product);
         await _unitOfWork.SaveChangesAsync();

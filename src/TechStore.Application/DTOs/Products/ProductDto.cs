@@ -10,7 +10,9 @@ public class ProductDto
     public decimal Price { get; set; }
     public decimal? OldPrice { get; set; }
     public int StockQuantity { get; set; }
+    public int CategoryId { get; set; }
     public string CategoryName { get; set; } = string.Empty;
+    public int? BrandId { get; set; }
     public string? BrandName { get; set; }
     public bool IsActive { get; set; }
     public bool IsFeatured { get; set; }

@@ -19,7 +19,13 @@ const LoginPage = () => {
         const result = await login(email, password);
 
         if (result.success) {
-            navigate('/');
+            // Check if user is admin and redirect accordingly
+            const userRole = result.user?.role || '';
+            if (userRole === 'Admin') {
+                navigate('/admin');
+            } else {
+                navigate('/');
+            }
         } else {
             setError(result.message);
         }

@@ -18,8 +18,6 @@ public class ProductRepository : Repository<Product>, IProductRepository
             .Include(p => p.Brand)
             .Include(p => p.Images)
             .Include(p => p.Specifications)
-            .Include(p => p.Reviews)
-                .ThenInclude(r => r.User)
             .FirstOrDefaultAsync(p => p.Id == id);
     }
 
@@ -31,6 +29,17 @@ public class ProductRepository : Repository<Product>, IProductRepository
             .Include(p => p.Images)
             .Include(p => p.Specifications)
             .FirstOrDefaultAsync(p => p.Slug == slug);
+    }
+
+    public async Task<IEnumerable<Product>> GetAllWithDetailsAsync()
+    {
+        return await _dbSet
+            .Include(p => p.Category)
+            .Include(p => p.Brand)
+            .Include(p => p.Images)
+            .Where(p => p.IsActive)
+            .OrderByDescending(p => p.CreatedAt)
+            .ToListAsync();
     }
 
     public async Task<IEnumerable<Product>> GetFeaturedProductsAsync(int count)

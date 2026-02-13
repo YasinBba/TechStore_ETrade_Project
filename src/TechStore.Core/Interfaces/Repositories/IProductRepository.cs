@@ -6,6 +6,7 @@ public interface IProductRepository : IRepository<Product>
 {
     Task<Product?> GetByIdWithDetailsAsync(int id);
     Task<Product?> GetBySlugAsync(string slug);
+    Task<IEnumerable<Product>> GetAllWithDetailsAsync();
     Task<IEnumerable<Product>> GetFeaturedProductsAsync(int count);
     Task<IEnumerable<Product>> GetByCategoryIdAsync(int categoryId);
     Task<IEnumerable<Product>> SearchAsync(string searchTerm);

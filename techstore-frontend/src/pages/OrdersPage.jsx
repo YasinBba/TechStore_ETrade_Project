@@ -38,11 +38,18 @@ const OrdersPage = () => {
             <h1 className="text-3xl font-bold mb-8 font-orbitron">Sipariş Geçmişim</h1>
 
             {orders.length === 0 ? (
-                <div className="text-center py-20 bg-gray-50 rounded-lg border border-dashed border-gray-300">
-                    <Package className="mx-auto h-16 w-16 text-gray-400 mb-4" />
-                    <h2 className="text-xl font-semibold text-gray-700 mb-2">Henüz Siparişiniz Yok</h2>
-                    <p className="text-gray-500 mb-6">Sipariş verdiğinizde burada listelenecektir.</p>
-                    <Link to="/products" className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
+                <div className="min-h-[50vh] flex flex-col items-center justify-center text-center bg-gray-50 rounded-xl border border-dashed border-gray-300 p-8">
+                    <div className="bg-white p-4 rounded-full shadow-sm mb-6">
+                        <Package className="h-16 w-16 text-blue-200" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-2">Henüz Siparişiniz Yok</h2>
+                    <p className="text-gray-500 mb-8 max-w-sm mx-auto">
+                        Sipariş verdiğinizde tüm detayları burada görebileceksiniz.
+                    </p>
+                    <Link
+                        to="/products"
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg shadow-blue-500/30 transform hover:scale-105"
+                    >
                         Alışverişe Başla
                     </Link>
                 </div>
@@ -66,15 +73,18 @@ const OrdersPage = () => {
                                     <div>
                                         <span className="block text-xs uppercase text-gray-500 font-bold">Durum</span>
                                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${order.status === 'Pending' ? 'bg-yellow-100 text-yellow-800' :
-                                                order.status === 'Completed' ? 'bg-green-100 text-green-800' :
-                                                    'bg-gray-100 text-gray-800'
+                                            order.status === 'Completed' ? 'bg-green-100 text-green-800' :
+                                                'bg-gray-100 text-gray-800'
                                             }`}>
                                             {order.status}
                                         </span>
                                     </div>
                                 </div>
-                                <div className="mt-4 md:mt-0 font-mono text-sm text-gray-500">
+                                <div className="mt-4 md:mt-0 font-mono text-sm text-gray-500 flex items-center">
                                     #{order.orderNumber}
+                                    <Link to={`/orders/${order.id}`} className="ml-4 text-blue-600 hover:text-blue-800 flex items-center font-sans font-semibold">
+                                        Detaylar <ChevronRight size={16} />
+                                    </Link>
                                 </div>
                             </div>
 

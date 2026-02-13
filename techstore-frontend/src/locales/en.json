@@ -1,0 +1,156 @@
+{
+    "common": {
+        "search": "Search products...",
+        "cart": "My Cart",
+        "login": "Login",
+        "logout": "Logout",
+        "profile": "My Profile",
+        "orders": "My Orders",
+        "products": "Products",
+        "wishlist": "Wishlist",
+        "addToCart": "Add to Cart",
+        "addedToCart": "Added to cart!",
+        "error": "An error occurred",
+        "allProducts": "All Products",
+        "filter": "Filter",
+        "apply": "Apply",
+        "clear": "Clear",
+        "clearAll": "Clear All",
+        "loading": "Loading...",
+        "retry": "Retry",
+        "results": "results",
+        "home": "Home",
+        "about": "About Us",
+        "contact": "Contact"
+    },
+    "footer": {
+        "quickLinks": "Quick Links",
+        "categories": "Categories",
+        "rightsReserved": "All rights reserved.",
+        "sloganSuffix": "Latest products, best prices."
+    },
+    "filters": {
+        "title": "Filters",
+        "categories": "Categories",
+        "brands": "Brands",
+        "status": "Status",
+        "inStock": "In Stock Only",
+        "onSale": "On Sale Items",
+        "priceRange": "Price Range",
+        "sort": "Sort By",
+        "sortBy": {
+            "default": "Default",
+            "priceAsc": "Price (Low to High)",
+            "priceDesc": "Price (High to Low)",
+            "nameAsc": "Name (A-Z)",
+            "nameDesc": "Name (Z-A)"
+        },
+        "clearFilters": "Clear Filters",
+        "notFound": {
+            "category": "No categories found.",
+            "brand": "No brands found.",
+            "products": "No products match your criteria."
+        },
+        "active": {
+            "search": "Search",
+            "stock": "In Stock",
+            "sale": "On Sale",
+            "price": "Price",
+            "categorySelected": "Category Selected"
+        }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Get in touch with us for your questions and suggestions.",
+        "email": "Email",
+        "phone": "Phone",
+        "address": "Address",
+        "workingHours": "Working Hours",
+        "weekdays": "Weekdays",
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "closed": "Closed"
+    },
+    "cart": {
+        "title": "My Cart",
+        "empty": "Your cart is empty",
+        "emptySubtitle": "Add items to start shopping",
+        "total": "Total",
+        "checkout": "Checkout",
+        "viewCart": "View Cart"
+    },
+    "product": {
+        "reviews": "reviews",
+        "description": "Description",
+        "quantity": "Qty",
+        "freeShipping": "Free Shipping",
+        "allOrders": "On all orders",
+        "warranty": "2 Year Warranty",
+        "distributorWarranty": "Official distributor warranty",
+        "backToProducts": "Back to Products",
+        "notFound": "Product Not Found",
+        "noDescription": "No description available for this product.",
+        "addToWishlist": "Add to Wishlist",
+        "removeFromWishlist": "Remove from Wishlist",
+        "discount": "Discount",
+        "brandLabel": "Brand"
+    },
+    "home": {
+        "popularCategories": "Popular Categories",
+        "featuredProducts": "Featured Products",
+        "viewAll": "View All",
+        "noFeatured": "No featured products found.",
+        "hero": {
+            "title": "Technology of the Future",
+            "highlight": "Right Here Today",
+            "desc": "Your one-stop shop for latest gaming PCs, consoles, and gear.",
+            "button": "Start Shopping"
+        },
+        "trust": {
+            "warranty": {
+                "title": "Original Product Warranty",
+                "desc": "All our products are 100% original with 2-year warranty."
+            },
+            "delivery": {
+                "title": "Fast Delivery",
+                "desc": "Your orders are shipped on the same day."
+            },
+            "support": {
+                "title": "24/7 Support",
+                "desc": "Our expert team is always ready to help you."
+            }
+        }
+    },
+    "about": {
+        "title": "About Us",
+        "subtitle": "The reliable address for tech enthusiasts",
+        "story": {
+            "title": "Our Story",
+            "p1": "TechStore was founded in 2026 to provide a quality and reliable shopping experience for tech enthusiasts. Our mission is to deliver the latest technological products at the most affordable prices and to bring everything needed in the gaming world together on a single platform.",
+            "p2": "With our wide range of products from graphics cards to gaming peripherals, processors to laptops, we respond to the needs of every level of gamer and tech enthusiast."
+        },
+        "values": {
+            "reliability": {
+                "title": "Reliability",
+                "desc": "We give our customers peace of mind with 100% original products, a 2-year warranty, and a secure payment system."
+            },
+            "delivery": {
+                "title": "Fast Delivery",
+                "desc": "Your orders are delivered to cargo on the same day. We offer fast and secure shipping services throughout Turkey."
+            },
+            "satisfaction": {
+                "title": "Customer Satisfaction",
+                "desc": "Our 24/7 customer support team is ready to provide immediate answers to all your questions."
+            },
+            "quality": {
+                "title": "Quality",
+                "desc": "We offer our customers tested and approved products from only reliable brands."
+            }
+        },
+        "cta": {
+            "title": "One Step Closer to Technology",
+            "desc": "Join thousands of satisfied customers and take your gaming experience to the next level.",
+            "button": "Explore Products"
+        }
+    }
+}

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TechStore.Core.Entities;
-using TechStore.Infrastructure.Identity;
 
 namespace TechStore.Infrastructure.Data;
 
@@ -17,7 +16,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<Brand> Brands { get; set; }
     public DbSet<ProductImage> ProductImages { get; set; }
     public DbSet<ProductSpecification> ProductSpecifications { get; set; }
-    public DbSet<User> Users { get; set; }
+    // public DbSet<User> Users { get; set; }
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Cart> Carts { get; set; }
     public DbSet<CartItem> CartItems { get; set; }
@@ -27,6 +26,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<Review> Reviews { get; set; }
     public DbSet<Coupon> Coupons { get; set; }
     public DbSet<Wishlist> Wishlists { get; set; }
+    public DbSet<StockHistory> StockHistories { get; set; }
+    public DbSet<Banner> Banners { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

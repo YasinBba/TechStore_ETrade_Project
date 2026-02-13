@@ -1,0 +1,156 @@
+{
+    "common": {
+        "search": "Ürün ara...",
+        "cart": "Sepetim",
+        "login": "Giriş Yap",
+        "logout": "Çıkış Yap",
+        "profile": "Profilim",
+        "orders": "Siparişlerim",
+        "products": "Ürünler",
+        "wishlist": "Favoriler",
+        "addToCart": "Sepete Ekle",
+        "addedToCart": "Sepete eklendi!",
+        "error": "Bir hata oluştu",
+        "allProducts": "Tüm Ürünler",
+        "filter": "Filtrele",
+        "apply": "Uygula",
+        "clear": "Temizle",
+        "clearAll": "Tümünü Temizle",
+        "loading": "Yükleniyor...",
+        "retry": "Tekrar Dene",
+        "results": "sonuç",
+        "home": "Ana Sayfa",
+        "about": "Hakkımızda",
+        "contact": "İletişim"
+    },
+    "footer": {
+        "quickLinks": "Hızlı Bağlantılar",
+        "categories": "Kategoriler",
+        "rightsReserved": "Tüm hakları saklıdır.",
+        "sloganSuffix": "En yeni ürünler, en uygun fiyatlarla."
+    },
+    "filters": {
+        "title": "Filtreler",
+        "categories": "Kategoriler",
+        "brands": "Markalar",
+        "status": "Durum",
+        "inStock": "Sadece Stokta Olanlar",
+        "onSale": "İndirimli Ürünler",
+        "priceRange": "Fiyat Aralığı",
+        "sort": "Sıralama",
+        "sortBy": {
+            "default": "Varsayılan",
+            "priceAsc": "Fiyat (Artan)",
+            "priceDesc": "Fiyat (Azalan)",
+            "nameAsc": "İsim (A-Z)",
+            "nameDesc": "İsim (Z-A)"
+        },
+        "clearFilters": "Filtreleri Temizle",
+        "notFound": {
+            "category": "Kategori bulunamadı.",
+            "brand": "Marka bulunamadı.",
+            "products": "Aradığınız kriterlere uygun ürün bulunamadı."
+        },
+        "active": {
+            "search": "Arama",
+            "stock": "Stokta",
+            "sale": "İndirimli",
+            "price": "Fiyat",
+            "categorySelected": "Kategori Seçili"
+        }
+    },
+    "contact": {
+        "title": "İletişim",
+        "subtitle": "Sorularınız veya önerileriniz için bizimle iletişime geçin.",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "address": "Adres",
+        "workingHours": "Çalışma Saatleri",
+        "weekdays": "Hafta İçi",
+        "saturday": "Cumartesi",
+        "sunday": "Pazar",
+        "closed": "Kapalı"
+    },
+    "cart": {
+        "title": "Sepetim",
+        "empty": "Sepetiniz boş",
+        "emptySubtitle": "Alışverişe başlamak için ürün ekleyin",
+        "total": "Toplam",
+        "checkout": "Siparişi Tamamla",
+        "viewCart": "Sepete Git"
+    },
+    "product": {
+        "reviews": "değerlendirme",
+        "description": "Açıklama",
+        "quantity": "Adet",
+        "freeShipping": "Ücretsiz Kargo",
+        "allOrders": "Tüm siparişlerde",
+        "warranty": "2 Yıl Garanti",
+        "distributorWarranty": "Resmi distribütör garantili",
+        "backToProducts": "Ürünlere Geri Dön",
+        "notFound": "Ürün Bulunamadı",
+        "noDescription": "Bu ürün için henüz açıklama girilmemiş.",
+        "addToWishlist": "Favorilere Ekle",
+        "removeFromWishlist": "Favorilerden Çıkar",
+        "discount": "İndirim",
+        "brandLabel": "Marka"
+    },
+    "home": {
+        "popularCategories": "Popüler Kategoriler",
+        "featuredProducts": "Öne Çıkan Ürünler",
+        "viewAll": "Tümünü Gör",
+        "noFeatured": "Henüz öne çıkan ürün bulunamadı.",
+        "hero": {
+            "title": "Geleceğin Teknolojisi",
+            "highlight": "Bugün Burada",
+            "desc": "En yeni oyun bilgisayarları, konsollar ve ekipmanlar için tek adresiniz.",
+            "button": "Alışverişe Başla"
+        },
+        "trust": {
+            "warranty": {
+                "title": "Orijinal Ürün Garantisi",
+                "desc": "Tüm ürünlerimiz %100 orijinal ve 2 yıl garantilidir."
+            },
+            "delivery": {
+                "title": "Hızlı Teslimat",
+                "desc": "Siparişleriniz aynı gün kargoya verilir."
+            },
+            "support": {
+                "title": "7/24 Destek",
+                "desc": "Uzman ekibimiz her zaman yardımınıza hazır."
+            }
+        }
+    },
+    "about": {
+        "title": "Hakkımızda",
+        "subtitle": "Teknoloji tutkunlarının güvenilir adresi",
+        "story": {
+            "title": "Hikayemiz",
+            "p1": "TechStore, 2026 yılında teknoloji meraklıları için kaliteli ve güvenilir bir alışveriş deneyimi sunmak amacıyla kuruldu. Misyonumuz, en son teknolojik ürünleri en uygun fiyatlarla müşterilerimize ulaştırmak ve gaming dünyasında ihtiyaç duyulan her şeyi tek bir platformda toplamaktır.",
+            "p2": "Ekran kartlarından gaming periferlerine, işlemcilerden dizüstü bilgisayarlara kadar geniş ürün yelpazemizle, her seviyeden oyuncunun ve teknoloji tutkunun ihtiyacına cevap veriyoruz."
+        },
+        "values": {
+            "reliability": {
+                "title": "Güvenilirlik",
+                "desc": "%100 orijinal ürünler, 2 yıl garanti ve güvenli ödeme sistemiyle müşterilerimize huzur veriyoruz."
+            },
+            "delivery": {
+                "title": "Hızlı Teslimat",
+                "desc": "Siparişleriniz aynı gün kargoya teslim edilir. Türkiye geneline hızlı ve güvenli kargo hizmeti sunuyoruz."
+            },
+            "satisfaction": {
+                "title": "Müşteri Memnuniyeti",
+                "desc": "7/24 müşteri destek ekibimiz, tüm sorularınıza anında yanıt vermek için hazır bekliyor."
+            },
+            "quality": {
+                "title": "Kalite",
+                "desc": "Sadece güvenilir markalardan, test edilmiş ve onaylanmış ürünleri müşterilerimize sunuyoruz."
+            }
+        },
+        "cta": {
+            "title": "Teknolojiye Bir Adım Daha Yakın",
+            "desc": "Binlerce memnun müşterimize katılın ve gaming deneyiminizi bir üst seviyeye taşıyın.",
+            "button": "Ürünleri Keşfet"
+        }
+    }
+}
